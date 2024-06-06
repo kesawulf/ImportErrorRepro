@@ -1,0 +1,15 @@
+﻿<Project>
+  <PropertyGroup>
+    <HadNETSdk>$(UsingMicrosoftNETSdk)</HadNETSdk>
+  </PropertyGroup>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" Condition="'$(HadNETSdk)' != 'true'" />
+
+  <PropertyGroup Condition="'$(HadNETSdk)' != 'true'" >
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" Condition="'$(HadNETSdk)' != 'true'" />
+</Project>
